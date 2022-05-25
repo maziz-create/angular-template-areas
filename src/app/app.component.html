@@ -1,6 +1,6 @@
 <div *ngIf="page === 'Flex'">
-  <app-flex [changePage]="changePage"></app-flex>
+  <app-flex (pageTypeChange)="pageTypeChange()"></app-flex>
 </div>
 <div *ngIf="page === 'Grid'">
-  <app-grid [changePage]="changePage"></app-grid>
+  <app-grid (pageTypeChange)="pageTypeChange()"></app-grid>
 </div>

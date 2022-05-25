@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,16 +8,9 @@ import { FlexComponent } from './components/flex/flex.component';
 import { GridComponent } from './components/grid/grid.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FlexComponent,
-    GridComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, FlexComponent, GridComponent],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
