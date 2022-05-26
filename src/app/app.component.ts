@@ -7,8 +7,7 @@ import { PageType } from './models/page';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  page: PageType = PageType.Grid;
-  title = 'angular-template-areas';
+  page: PageType = PageType.Flex;
 
   pageTypeChange() {
     if (this.page === PageType.Flex) this.page = PageType.Grid;
