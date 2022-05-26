@@ -63,29 +63,28 @@
             class="main-content__formInput"
             formControlName="input4"
           />
+          <button
+            type="submit"
+            class="main-content__formButton float-right"
+            [class]="this.colourClass"
+            [disabled]="!this.exampleForm.valid"
+          >
+            Submit Button
+          </button>
+          <button
+            class="main-content__formButton float-left"
+            [class]="this.colourClass"
+            (click)="this.resetForm()"
+            [disabled]="
+              this.exampleForm.value.input1 === null &&
+              this.exampleForm.value.input2 === null &&
+              this.exampleForm.value.input3 === null &&
+              this.exampleForm.value.input4 === null
+            "
+          >
+            Reset Button
+          </button>
         </form>
-
-        <button
-          class="main-content__formButton float-right"
-          [class]="this.colourClass"
-          (click)="this.submitForm()"
-          [disabled]="!this.exampleForm.valid"
-        >
-          Submit Button
-        </button>
-        <button
-          class="main-content__formButton float-left"
-          [class]="this.colourClass"
-          (click)="this.resetForm()"
-          [disabled]="
-            this.exampleForm.value.input1 === null &&
-            this.exampleForm.value.input2 === null &&
-            this.exampleForm.value.input3 === null &&
-            this.exampleForm.value.input4 === null
-          "
-        >
-          Reset Button
-        </button>
       </div>
     </div>
   </main>
