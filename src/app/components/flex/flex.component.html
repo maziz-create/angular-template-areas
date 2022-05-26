@@ -1,1 +1,99 @@
-<p>flex works!</p>
+<div class="flex-container">
+  <header class="item" [class]="this.colourClass">Header</header>
+  <div
+    class="content-wrapper d-flex justify-content-between align-items-center"
+  >
+    <main class="item overflow-auto d-flex justify-content-center">
+      <div class="main-content">
+        <div class="main-content__menuItems">
+          <div
+            class="main-content__menuItem bg-red"
+            (click)="this.changeColourClass('bg-red')"
+          >
+            Menu Item
+          </div>
+          <div
+            class="main-content__menuItem bg-blue"
+            (click)="this.changeColourClass('bg-blue')"
+          >
+            Menu Item
+          </div>
+          <div
+            class="main-content__menuItem bg-skyblue"
+            (click)="this.changeColourClass('bg-skyblue')"
+          >
+            Menu Item
+          </div>
+          <div
+            class="main-content__menuItem bg-pink"
+            (click)="this.changeColourClass('bg-pink')"
+          >
+            Menu Item
+          </div>
+          <div
+            class="main-content__menuItem bg-aqua"
+            (click)="this.changeColourClass('bg-aqua')"
+          >
+            Menu Item
+          </div>
+          <div
+            class="main-content__menuItem bg-purple"
+            (click)="this.changeColourClass('bg-purple')"
+          >
+            Menu Item
+          </div>
+        </div>
+        <div class="main-content__form d-flex-column align-items-center">
+          <div class="main-content__formTitle">One</div>
+          <form [formGroup]="exampleForm" (submit)="submitForm()">
+            <input
+              type="text"
+              class="main-content__formInput"
+              formControlName="input1"
+            />
+            <input
+              type="text"
+              class="main-content__formInput"
+              formControlName="input2"
+            />
+            <input
+              type="text"
+              class="main-content__formInput"
+              formControlName="input3"
+            />
+            <input
+              type="text"
+              class="main-content__formInput"
+              formControlName="input4"
+            />
+            <div class="main-content__formButtonsWrapper">
+              <button
+                class="main-content__formButton"
+                [class]="this.colourClass"
+                (click)="this.resetForm()"
+                [disabled]="
+                  this.exampleForm.value.input1 === null &&
+                  this.exampleForm.value.input2 === null &&
+                  this.exampleForm.value.input3 === null &&
+                  this.exampleForm.value.input4 === null
+                "
+              >
+                Reset Button
+              </button>
+              <button
+                type="submit"
+                class="main-content__formButton"
+                [class]="this.colourClass"
+                [disabled]="!this.exampleForm.valid"
+              >
+                Submit Button
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <aside class="item" [class]="this.colourClass">Sidebar</aside>
+  </div>
+  <footer class="item" [class]="this.colourClass">Footer</footer>
+</div>
