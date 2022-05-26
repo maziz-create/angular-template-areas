@@ -1,3 +1,5 @@
+@import "~ngx-toastr/toastr";
+
 /* You can add global styles to this file, and also import other style files */
 * {
   box-sizing: border-box;
@@ -9,4 +11,38 @@ body {
   font-size: 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+/* colors */
+.bg-skyblue {
+  background-color: skyblue;
+}
+.bg-purple {
+  background-color: rgb(169, 71, 169);
+}
+.bg-pink {
+  background-color: rgb(206, 133, 145);
+}
+.bg-red {
+  background-color: rgb(241, 69, 69);
+}
+.bg-aqua {
+  background-color: aqua;
+}
+.bg-blue {
+  background-color: rgb(101, 101, 226);
 }
