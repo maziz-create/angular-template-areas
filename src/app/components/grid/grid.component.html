@@ -1,1 +1,94 @@
-<p>grid works!</p>
+<div class="grid-container">
+  <header class="item" [class]="this.colourClass">Header</header>
+  <main class="item">
+    <div class="main-content">
+      <div class="main-content__menuItems">
+        <div
+          class="main-content__menuItem bg-red"
+          (click)="this.changeColourClass('bg-red')"
+        >
+          Menu Item
+        </div>
+        <div
+          class="main-content__menuItem bg-blue"
+          (click)="this.changeColourClass('bg-blue')"
+        >
+          Menu Item
+        </div>
+        <div
+          class="main-content__menuItem bg-skyblue"
+          (click)="this.changeColourClass('bg-skyblue')"
+        >
+          Menu Item
+        </div>
+        <div
+          class="main-content__menuItem bg-pink"
+          (click)="this.changeColourClass('bg-pink')"
+        >
+          Menu Item
+        </div>
+        <div
+          class="main-content__menuItem bg-aqua"
+          (click)="this.changeColourClass('bg-aqua')"
+        >
+          Menu Item
+        </div>
+        <div
+          class="main-content__menuItem bg-purple"
+          (click)="this.changeColourClass('bg-purple')"
+        >
+          Menu Item
+        </div>
+      </div>
+      <div class="main-content__form">
+        <div class="main-content__formTitle">Two</div>
+        <form [formGroup]="exampleForm" (submit)="submitForm()">
+          <input
+            type="text"
+            class="main-content__formInput"
+            formControlName="input1"
+          />
+          <input
+            type="text"
+            class="main-content__formInput"
+            formControlName="input2"
+          />
+          <input
+            type="text"
+            class="main-content__formInput"
+            formControlName="input3"
+          />
+          <input
+            type="text"
+            class="main-content__formInput"
+            formControlName="input4"
+          />
+        </form>
+
+        <button
+          class="main-content__formButton float-right"
+          [class]="this.colourClass"
+          (click)="this.submitForm()"
+          [disabled]="!this.exampleForm.valid"
+        >
+          Submit Button
+        </button>
+        <button
+          class="main-content__formButton float-left"
+          [class]="this.colourClass"
+          (click)="this.resetForm()"
+          [disabled]="
+            this.exampleForm.value.input1 === null &&
+            this.exampleForm.value.input2 === null &&
+            this.exampleForm.value.input3 === null &&
+            this.exampleForm.value.input4 === null
+          "
+        >
+          Reset Button
+        </button>
+      </div>
+    </div>
+  </main>
+  <aside class="item sidebar">Sidebar</aside>
+  <footer class="item footer" [class]="this.colourClass">Footer</footer>
+</div>
